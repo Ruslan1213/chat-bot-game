@@ -1,15 +1,18 @@
 package com.devatlant.chatbot.game;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.glassfish.jersey.server.model.Parameterized;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.telegram.telegrambots.api.objects.Message;
+
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Random;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class GameTest {
@@ -48,15 +51,25 @@ class GameTest {
         assertEquals(1, res.counter);
     }
 
-    @Test
-    public void should_return_true_when_input_data_is_integer(){
+    @ParameterizedTest
+    @MethodSource("input_data")
+    public void should_return_true_when_input_data_is_integer(String input, boolean expected){
         //given
         testSubject = new Game(100, new Random());
 
         //run
-        boolean res = testSubject.isInteger("1");
+        boolean result = testSubject.isInteger(input);
 
         // assert
-        assertEquals(true, res);
+        assertEquals(expected, result);
+    }
+
+    private static Stream<Arguments> input_data() {
+        return Stream.of(
+                Arguments.of("3", true),
+                Arguments.of("1", true),
+                Arguments.of("2", false),
+                Arguments.of("not blank", false)
+        );
     }
 }
