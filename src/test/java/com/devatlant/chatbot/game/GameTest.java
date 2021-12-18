@@ -68,7 +68,7 @@ class GameTest {
         return Stream.of(
                 Arguments.of("3", true),
                 Arguments.of("1", true),
-                Arguments.of("2", false),
+                Arguments.of("2", true),
                 Arguments.of("not blank", false)
         );
     }
