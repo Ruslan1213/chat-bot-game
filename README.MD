@@ -26,3 +26,27 @@ This project uses under the hood a popular java abstraction library for accessin
 ![screenshot](https://raw.githubusercontent.com/devatlant/chat-bot-game/master/res/telegram_screenshot.jpg)
 
 ## Test from git and Vim
+
+# Name
+Ruslan VOLODKO
+
+Git: *Ici*                                                              
+Role: **Middle .NET developer**
+ I want be ~~Senior .NET developer~~ CEO
+ 
+ # Skils
+1. 2 years os experiense of .NET;
+2. .net Core
+⋅*Some Angular. 
+[My linkedin](https://www.linkedin.com/in/ruslan-volodko-134479177/)
+
+| Company       | experiance    | Place  |
+| ------------- |:-------------:| -----:|
+| Epam      | 1 | Kharkiv |
+| SMISS   | 1      |   Kharkiv |
+| MyCredit | 1      |    Kharkiv |
+
+Three or more...
+
+---
+
